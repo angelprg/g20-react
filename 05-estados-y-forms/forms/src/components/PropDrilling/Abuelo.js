@@ -1,11 +1,14 @@
+import { useState } from "react";
 import Padre from "./Padre";
 
 const Abuelo = (props) => {
+
+  const fruta = "Manzana"
+  const [nombre, setNombre] = useState("Angel");
   console.log('props', props)
   // const fruta = props.fruta;
   // const setNombre = props.setNombre
   // const nombre = props.nombre
-  const {fruta, setNombre, nombre} = props;
 
 
 
