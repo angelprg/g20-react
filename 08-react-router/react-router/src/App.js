@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 
 import ArticlePage from "./pages/ArticlePage";
 import CatalogPage from "./pages/CatalogPage";
+import DashboardPage from "./pages/DashboardPage";
 import HomePage from "./pages/HomePage";
 import UserPage from "./pages/UserPage";
 
@@ -15,23 +16,13 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="articles" element={<ArticlePage />} />
         <Route path="catalog" element={<CatalogPage />} />
-        <Route path="user" element={<UserPage />} />
+        <Route path="admin">
+          <Route path="user" element={<UserPage />} />
+          <Route index element={<DashboardPage />} />
+        </Route>
       </Routes>
     </div>
   );
-
-  // return (
-  //   <div className="App">
-  //     <nav>
-  //       <button onClick={() => setPage("articles")}>Articulos</button>
-  //       <button onClick={() => setPage("catalog")}>Catálogo</button>
-  //       <button onClick={() => setPage("user")}>Usuario</button>
-  //     </nav>
-  //     {page === "articles" && <ArticlePage />}
-  //     {page === "catalog" && <CatalogPage />}
-  //     {page === "user" && <UserPage />}
-  //   </div>
-  // );
 }
 
 export default App;

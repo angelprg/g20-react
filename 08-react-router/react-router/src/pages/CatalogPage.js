@@ -1,8 +1,10 @@
 import React from 'react'
+import Catalog from '../components/Catalog'
 
 const CatalogPage = () => {
+
   return (
-    <div>CatalogPage</div>
+    <Catalog catalogData={[]}/>
   )
 }
 
