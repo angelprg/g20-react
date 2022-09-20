@@ -5,7 +5,6 @@ export const UserContext = React.createContext();
 const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState({token: null});
   useEffect(()=>{
-    console.log('Ejecutando useEffect', user)
     if ( user?.token ){
       localStorage.setItem('token', user.token)
     }
