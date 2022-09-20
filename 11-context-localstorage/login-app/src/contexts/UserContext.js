@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export const UserContext = React.createContext();
 
 const UserContextProvider = ({ children }) => {
-  const [user, setUser] = useState();
-  //{token: "", }
-  const login = () =>{}
-  const logut = () => {}
+  const [user, setUser] = useState({token: null});
+  useEffect(()=>{
+    console.log('Ejecutando useEffect', user)
+    if ( user?.token ){
+      localStorage.setItem('token', user.token)
+    }
+    else {
+      localStorage.removeItem('token')
+    }
+  },[user])
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
